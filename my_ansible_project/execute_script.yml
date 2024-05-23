@@ -1,0 +1,14 @@
+---
+- name: Ejecutar el script de prueba
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Ejecutar un script y guardar el resultado en prueba.log
+      command: /path/to/your/script.sh
+      register: script_output
+
+    - name: Guardar la salida del script en prueba.log
+      copy:
+        content: "{{ script_output.stdout }}"
+        dest: /ansible/prueba.log

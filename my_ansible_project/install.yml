@@ -1,0 +1,7 @@
+---
+- name: Configurar el sistema base
+  hosts: localhost
+  become: yes
+
+  roles:
+    - common

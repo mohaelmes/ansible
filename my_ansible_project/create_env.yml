@@ -1,0 +1,7 @@
+---
+- name: Crear el entorno web
+  hosts: localhost
+  become: yes
+
+  roles:
+    - webserver
